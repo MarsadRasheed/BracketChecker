@@ -4,11 +4,15 @@
 
 using namespace std;
 
+// node class 
+
 class node {
 public:
 	char data;
 	node* next;
 };
+
+// linkedlist class
 
 class LinkedList {
 
@@ -17,6 +21,7 @@ class LinkedList {
 
 public:
 
+	// values initilization
 	LinkedList() {
 		head = NULL;
 		tail = NULL;
@@ -27,6 +32,8 @@ public:
 	void print();
 	char top();
 
+	// check empty list function
+	
 	bool empty() {
 		if (!this->head) {
 			return true;
@@ -34,6 +41,8 @@ public:
 		return false;
 	}
 };
+
+// insertion function
 
 void LinkedList::add(char word) {
 
@@ -52,6 +61,8 @@ void LinkedList::add(char word) {
 	temp->next = NULL;
 	tail = temp;
 }
+
+// deletion function
 
 char LinkedList::remove() {
 
@@ -87,6 +98,8 @@ char LinkedList::remove() {
 	}
 }
 
+// print function
+
 void LinkedList::print() {
 	node* temp;
 	temp = head;
@@ -102,6 +115,8 @@ void LinkedList::print() {
 	}
 }
 
+// getting top function
+
 char LinkedList::top() {
 	if (!empty()) {
 		return (tail->data);
@@ -109,30 +124,37 @@ char LinkedList::top() {
 	return 't';
 }
 
+// class stack
+
 class Stack {
 	LinkedList l;
 public:
 
+	// check empty stack function
 	bool emptyStack() {
 		bool check;
 		check = l.empty();
 		return check;
 	}
-
+ 
+	// insertion function for stack
 	void push(char a) {
 		l.add(a);
 	}
 
+	// deletion function for stack
 	char pop() {
 		char deleted;
 		deleted = l.remove();
 		return deleted;
 	}
 
+	// printing stack
 	void print() {
 		l.print();
 	}
 
+	// getting top of stack
 	char peek() {
 		char word;
 		word = l.top();
